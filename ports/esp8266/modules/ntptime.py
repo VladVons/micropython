@@ -31,8 +31,9 @@ def time():
 
 # There's currently no timezone support in MicroPython, so
 # utime.localtime() will return UTC time (as if it was .gmtime())
-def settime():
-    t = time()
+# aTZone - time zone +/- hours
+def settime(aTZone):
+    t = time() + (3600 * aTZone) 
     import machine
     import utime
 
